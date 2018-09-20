@@ -1,2 +1,0 @@
-{root vegetables} => {other vegetables}
-{sausage} => {rolls/buns}
