@@ -157,7 +157,7 @@ def print_rules(outdir, rules):
 if __name__ == '__main__':
 
     datafilepath = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\Association Rule Mining\Data\Groceries100.csv'
-    outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\Association Rule Mining'
+    # outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\Association Rule Mining'
 
     if len (sys.argv) != 3 and len (sys.argv) != 4:
         print ("Wrong command format, please follwoing the command format below:")

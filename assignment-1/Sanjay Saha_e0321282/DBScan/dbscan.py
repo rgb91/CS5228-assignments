@@ -9,8 +9,11 @@ with Noise
 import math
 import sys
 import os
-import time
 import numpy as np
+from sklearn.cluster import DBSCAN
+from sklearn import metrics
+from sklearn.datasets.samples_generator import make_blobs
+from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
 def read_data(filepath):
@@ -102,25 +105,20 @@ def dbscan(X, eps, minpts):
 
 if __name__ == '__main__':
     datadir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan\Data'
-    outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan'
-    # outdir = '.'
+    # outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan'
+    outdir = '.'
 
-    # if len (sys.argv) != 4:
-    #     print ("Wrong command format, please follwoing the command format below:")
-    #     print ("python dbscan-template.py data_filepath eps minpts")
-    #     exit (0)8
-    #
-    # X = read_data (sys.argv[1])
-    # eps = float(sys.argv[2])
-    # minpts = int(sys.argv[3])
-    X = read_data(datadir+os.sep+'data_1.txt')
-    eps = float(0.3)
-    minpts = 15
+    if len (sys.argv) != 4:
+        print ("Wrong command format, please follwoing the command format below:")
+        print ("python dbscan-template.py data_filepath eps minpts")
+        exit (0)
 
-    start_time = time.time()
+    X = read_data (sys.argv[1])
+    eps = float(sys.argv[2])
+    minpts = int(sys.argv[3])
+
     # Compute DBSCAN
     db = dbscan (X, eps, minpts)
-    print("========== %s Seconds ============" % (time.time() - start_time))
 
     # store output labels returned by your algorithm for automatic marking
     write_data(outdir + os.sep + 'Output' + os.sep + 'labels.txt', db[0])

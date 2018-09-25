@@ -1,0 +1,5 @@
+{sausage} => {rolls/buns}
+{root vegetables} => {other vegetables}
+{soda} => {rolls/buns}
+{yogurt} => {whole milk}
+{other vegetables} => {whole milk}
