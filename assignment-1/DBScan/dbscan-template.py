@@ -102,20 +102,20 @@ def dbscan(X, eps, minpts):
 
 if __name__ == '__main__':
     datadir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan\Data'
-    outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan'
-    # outdir = '.'
+    # outdir = r'C:\Users\Sanjay Saha\CS5228-assignments\assignment-1\DBScan'
+    outdir = '.'
 
-    # if len (sys.argv) != 4:
-    #     print ("Wrong command format, please follwoing the command format below:")
-    #     print ("python dbscan-template.py data_filepath eps minpts")
-    #     exit (0)8
-    #
-    # X = read_data (sys.argv[1])
-    # eps = float(sys.argv[2])
-    # minpts = int(sys.argv[3])
-    X = read_data(datadir+os.sep+'data_1.txt')
-    eps = float(0.3)
-    minpts = 15
+    if len (sys.argv) != 4:
+        print ("Wrong command format, please follwoing the command format below:")
+        print ("python dbscan-template.py data_filepath eps minpts")
+        exit (0)
+
+    X = read_data (sys.argv[1])
+    eps = float(sys.argv[2])
+    minpts = int(sys.argv[3])
+    # X = read_data(datadir+os.sep+'data_1.txt')
+    # eps = float(0.3)
+    # minpts = 15
 
     start_time = time.time()
     # Compute DBSCAN
